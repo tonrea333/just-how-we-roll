@@ -44,64 +44,65 @@ dieNumberOne.addEventListener("click", onClick);
 function onClick() {
   let rng = getRandomNumber(6);
   getRandomNumber(6);
-
-let count = 0;
-sixes.reduce
-
-count = 1 + count;
+  whatisMean(sixes);
+  
+meanID.innerText = whatisMean(sixes);
 
   if (rng == 1) {
     oneSixDie.src = "images/d6/1.png"
-     sixes.push(1);
-     
+    sixes.push(1);
+
   } else if (rng == 2) {
     oneSixDie.src = "images/d6/2.png"
-     sixes.push(2);
-     
+    sixes.push(2);
+
   } else if (rng == 3) {
     oneSixDie.src = "images/d6/3.png"
-     sixes.push(3);
-     
+    sixes.push(3);
+
   } else if (rng == 4) {
     oneSixDie.src = "images/d6/4.png"
-     sixes.push(4);
-     
+    sixes.push(4);
+
   } else if (rng == 5) {
     oneSixDie.src = "images/d6/5.png"
-     sixes.push(5) ;
-     
+    sixes.push(5);
+
   } else if (rng == 6) {
     oneSixDie.src = "images/d6/6.png"
-     sixes.push(6);
-     
-  } const meanID = document.querySelector("#d6-rolls-mean")
+    sixes.push(6);
+
+  } 
   //const sum =sixes.reduce((accumulator, num) => {
+
+
+    
+    console.log(whatisMean(sixes), "mean");
   
+//Did not work to solve mean=======================
+  // let count = 0;
+  //count = count + 1;
 
-
-function whatisMean(sixes){
-  let sum = 0, i;
-  for(let i = 0; 1 < sixes.length; i++){
-    sum = sum + sixes[i];
-    return sum/sixes.length;
-    console.log(sum)
-  }
-}whatisMean(sixes);
-
-   // let count = 0;
-    //count = count + 1;
-  
   //console.log ((accumulator + num)/2);
   //});
   //let x = sixes[i]/sum;
- // meanID.x;
+  // meanID.x;
   //console.log(x)
-  console.log(sixes);
-  console.log(count);
-  
-  
-}
+ //==================================================
+ 
 
+
+}
+function whatisMean(sixes) {
+  let sum = 0;
+  for (let i = 0; i < sixes.length; i++) {
+    sum = sum + sixes[i];
+    console.log(sum)
+    
+  } return sum / sixes.length;
+
+
+} 
 
 //================================================
 
@@ -117,10 +118,12 @@ oneSixDie3.src = "images/start/d6.png";
 
 
 dieNumberTwo.addEventListener("click", onClick2);
-
- function onClick2() {
+const meanID2 = document.querySelector("#double-d6-rolls-mean")
+function onClick2() {
   let rng = getRandomNumber(6);
   getRandomNumber(6);
+  whatisMean2(doubleSixes);
+  meanID2.innerText = whatisMean2(doubleSixes);
 
   if (rng == 1) {
     oneSixDie2.src = "images/d6/1.png";
@@ -141,13 +144,24 @@ dieNumberTwo.addEventListener("click", onClick2);
     oneSixDie2.src = "images/d6/6.png";
     doubleSixes.push(6);
   }
-  console.log(rng);
+  console.log(whatisMean2(doubleSixes),"mean");
 }
+function whatisMean2(doubleSixes) {
+  let sum = 0;
+  for (let i = 0; i < doubleSixes.length; i++) {
+    sum = sum + doubleSixes[i];
+    console.log(sum)
+  } return sum / doubleSixes.length;
+}
+
+//================2nd of double dice==============
 
 dieNumberThree.addEventListener("click", onClick3);
 function onClick3() {
   let rng = getRandomNumber(6);
   getRandomNumber(6);
+
+
 
   if (rng == 1) {
     oneSixDie3.src = "images/d6/1.png";
@@ -174,11 +188,18 @@ function onClick3() {
 
 const dieNumberFour = document.querySelector("#d12-button");
 const oneSixDie4 = document.querySelector("#d12-roll");
+const meanID4 = document.querySelector("#d12-rolls-mean")
 oneSixDie4.src = "images/start/d12.jpeg";
 dieNumberFour.addEventListener("click", onClick4);
 function onClick4() {
   let rng = getRandomNumber(12);
   getRandomNumber(12);
+  whatisMean4(twelves);
+console.log(whatisMean4(twelves), "twelves")
+
+meanID4.innerText = whatisMean(twelves);
+
+
 
   if (rng == 1) {
     oneSixDie4.src = "images/numbers/1.png";
@@ -216,22 +237,34 @@ function onClick4() {
   } else if (rng == 12) {
     oneSixDie4.src = "images/numbers/12.png";
     twelves.push(12);
-
   }
-  console.log(rng);
+  
 
-  }
+}
+function whatisMean4(twelves) {
+  let sum = 0;
+  for (let i = 0; i < twelves.length; i++) {
+    sum = sum + twelves[i];
+  } return sum / twelves.length;
+}
+
 //=================================================================
 
 //20 Sided dice========================
 
 const dieNumberFive = document.querySelector("#d20-button");
 const oneSixDie5 = document.querySelector("#d20-roll");
+const meanID5 = document.querySelector("#d20-rolls-mean");
 oneSixDie5.src = "images/start/d20.jpg"
 dieNumberFive.addEventListener("click", onClick5);
 function onClick5() {
   let rng = getRandomNumber(20);
   getRandomNumber(20);
+  whatisMean5(twenties);
+console.log(whatisMean5(twenties));
+
+meanID5.innerText = whatisMean5(twenties);
+
 
   if (rng == 1) {
     oneSixDie5.src = "images/numbers/1.png";
@@ -293,9 +326,15 @@ function onClick5() {
   } else if (rng == 20) {
     oneSixDie5.src = "images/numbers/20.png";
     twenties.push(20);
-  } 
-  console.log(rng);
   }
+  console.log(rng);
+}
+function whatisMean5(twenties) {
+  let sum = 0;
+  for (let i = 0; i < twenties.length; i++) {
+    sum = sum + twenties[i];
+  } return sum / twenties.length;
+}
 //==============================================
 //Reset Button=======================
 
@@ -303,11 +342,17 @@ const resetAll = document.querySelector("#reset-button");
 
 resetAll.addEventListener("click", onClick6);
 function onClick6() {
-oneSixDie.src = "images/start/d6.png";
-oneSixDie2.src = "images/start/d6.png";
-oneSixDie3.src = "images/start/d6.png";
-oneSixDie4.src = "images/start/d12.jpeg";
-oneSixDie5.src = "images/start/d20.jpg";
+  oneSixDie.src = "images/start/d6.png";
+  oneSixDie2.src = "images/start/d6.png";
+  oneSixDie3.src = "images/start/d6.png";
+  oneSixDie4.src = "images/start/d12.jpeg";
+  oneSixDie5.src = "images/start/d20.jpg";
+;
+
+meanID.innerText = sixes.length = 0;
+meanID2.innerText = doubleSixes.length = 0;
+meanID4.innerText = twelves.length = 0;
+meanID5.innerText = twenties.length = 0;
 }
 
 
